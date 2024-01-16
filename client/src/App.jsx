@@ -1,5 +1,23 @@
-const App = () => {
-  return <h1 className="text-3xl text-red-500">App</h1>;
-};
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-export default App;
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SignIn from "./pages/Signin";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
+import SignUp from "./pages/Signup";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
